@@ -1,3 +1,6 @@
+let operating = false;
+const operators = ["÷", "×", "−", "+", "="];
+
 let add = (x, y) => {
     return x + y;
 };
@@ -7,11 +10,11 @@ let subtract = (x, y) => {
 };
 
 let multiply = (x, y) => {
-    return x*y;
+    return x * y;
 };
 
 let divide = (x, y) => {
-    return  x/y;
+    return x / y;
 };
 
 let operate = (operator, x, y) => {
@@ -31,11 +34,29 @@ let operate = (operator, x, y) => {
             break;
     }
     return result;
-}
+};
 
-let updateDisplay = e => {
+// Clear button: clear the display
+let updateDisplayClear = e => {
+    let screen1 = document.querySelector("#screen1"),
+        screen2 = document.querySelector("#screen2");
+    operating = false;
+    screen1.textContent = "";
+    screen2.textContent = "";
 
-}
+};
+let clearButton = document.querySelector("#clear");
+clearButton.addEventListener("click", updateDisplayClear);
 
-let userInput = document.getElementById("user-input");
-userInput.addEventListener('keydown', updateDisplay);
+
+// Delete button: backspace key action for second screen
+let updateDisplayDelete = e => {
+    let screen2 = document.querySelector("#screen2");
+    if (screen2.textContent.length > 1) {
+        screen2.textContent = screen2.textContent.slice(0, screen2.textContent.length - 1);
+    } else {
+        screen2.textContent = "";
+    }
+};
+let deleteButton = document.querySelector("#delete");
+deleteButton.addEventListener("click", updateDisplayDelete);
