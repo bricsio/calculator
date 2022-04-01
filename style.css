@@ -67,23 +67,9 @@ h1 {
     background-color: var(--copper-red);
     color: var(--charcoal);
     font-weight: bold;
-    display: flex;
-    flex-direction: column;
-
     word-wrap: break-word;
-}
-
-#screen1 {
-    font-size: 1.25rem;
-    background-color: transparent;
-    min-height: 23px;
-}
-
-#screen2 {
     font-size: 2.5rem;
-    background-color: transparent;
     min-height: 46px;
-    flex: 1 1 auto;
 }
 
 #big-buttons-container {
